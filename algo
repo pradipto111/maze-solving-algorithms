@@ -1,0 +1,32 @@
+Open list <- Potential candidates for exploration and their f values
+Closed list <- ABoolean array (true if explored, false otherwise) initial all cells as false
+
+OpenList.append(start)
+
+While open list is non empty OR target not readched{
+    Find coordinate in openlist with minimum f value
+    remove the cell for open list
+    Make corresponding value in closed list as true
+
+    explore the neighbours of this cell N,S,E,W,NE,SE,SW,NW
+
+    for every direction{
+        If it is the destination, exit the loop
+         if this cell is unvisited(closedlist = false) and is not an obstacle{
+             gnew = g(current cell) +1
+             hnew = calculate
+             fnew = gnew+hnew
+             if neighbour not in openlist{
+                 append neighbour to open list
+                 save its f,g,h values
+             }
+             elif gnew< g of this neighbour{
+                 update f,g,h values
+                 update parents coordinate
+                 update f value in the open list
+             }
+         }
+
+    }
+}
+
